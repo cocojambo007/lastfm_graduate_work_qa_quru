@@ -18,4 +18,13 @@ class LoginPage:
     def click_accept_all(self):
         browser.element(by.css('#onetrust-accept-btn-handler')).click()
 
+
+    def full_way_login(self):
+        browser.open('https://www.last.fm/login')
+        LoginPage.input_username_or_email(self, 'cocojambo_qa')
+        LoginPage.input_password(self, '1@qwerty')
+        LoginPage.click_accept_all(self)
+        LoginPage.press_button_login(self)
+
+
 login_page = LoginPage()
