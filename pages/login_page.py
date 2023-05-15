@@ -15,5 +15,7 @@ class LoginPage:
         browser.element(by.text('Let me in!')).click()
         return self
 
+    def click_accept_all(self):
+        browser.element(by.css('#onetrust-accept-btn-handler')).click()
 
 login_page = LoginPage()

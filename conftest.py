@@ -19,7 +19,7 @@ def pytest_addoption(parser):
 def setup_browser(request):
     browser_name = request.config.getoption('--browser_version')
     options = Options()
-    options.add_argument("--window-size=1920,1080")
+    # options.add_argument("--window-size=1920,1080")
 
     selenoid_capabilities = {
         "browserName": browser_name,
