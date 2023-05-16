@@ -48,4 +48,5 @@ class SettingsPage:
             by.css('#update-profile > form > div.form-group.form-group--submit > div > button > span')).click()
         return self
 
+
 settings_page = SettingsPage()
