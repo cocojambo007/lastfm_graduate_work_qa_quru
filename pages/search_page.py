@@ -1,9 +1,10 @@
 from selene import browser, by
-
+import allure
 
 class SearchPage:
-    def click_found_artist(self, band):
-        browser.element(by.text(band)).click()
+    @allure.step('Нажатие на иконку исполнителя')
+    def click_found_artist(self, artist):
+        browser.element(by.text(artist)).click()
         return self
 
 
