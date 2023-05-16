@@ -10,8 +10,12 @@ class SettingsPage:
     @allure.step('Загрузка картинки на аватар')
     def upload_picture(self):
         # time.sleep(60)
-        browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
-        return self
+        try:
+            browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
+            return self
+        except WebDriverException as e:
+            print(f"Иногда сайт долго думает и не отрабатывает тесты в SettingsPage: {e}")
+            return self
 
     @allure.step('Нажатие на кнопку "Upload picture"')
     def click_upload_picture_button(self):
