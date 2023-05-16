@@ -12,10 +12,10 @@ class SettingsPage:
         # time.sleep(60)
         try:
             browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
-            return self
         except WebDriverException as e:
-            print(f"Иногда сайт долго думает и не отрабатывает тесты в SettingsPage: {e}")
-            return self
+            allure.attach(str(e), name="WebDriverException")
+            raise e
+        return self
 
     @allure.step('Нажатие на кнопку "Upload picture"')
     def click_upload_picture_button(self):
@@ -31,10 +31,11 @@ class SettingsPage:
     def change_display_name(self, name):
         try:
             browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
-            return self
+            # return self
         except WebDriverException as e:
-            print(f"Иногда сайт долго думает и не отрабатывает тесты в SettingsPage: {e}")
-            return self
+            allure.attach(str(e), name="WebDriverException")
+            raise e
+        return self
 
         # if browser.element(by.id('id_full_name')).should(be.blank):
         # time.sleep(60)
