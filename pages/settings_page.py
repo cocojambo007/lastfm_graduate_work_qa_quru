@@ -9,7 +9,7 @@ FILE = 'Screenshot_1.jpg'
 
 class SettingsPage:
     def upload_picture(self):
-        time.sleep(60)
+        # time.sleep(60)
         browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
         return self
 
@@ -23,7 +23,7 @@ class SettingsPage:
 
     def change_display_name(self, name):
         # if browser.element(by.id('id_full_name')).should(be.blank):
-        time.sleep(60)
+        # time.sleep(60)
         browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
         return self
         # else:
@@ -32,7 +32,7 @@ class SettingsPage:
         #     return self
 
     def click_dropdown_country(self):
-        time.sleep(10)
+        # time.sleep(10)
         browser.element(by.xpath('//*[@id="id_country"]')).click()
         return self
 
@@ -41,7 +41,7 @@ class SettingsPage:
         return self
 
     def change_website(self):
-        time.sleep(10)
+        # time.sleep(10)
         browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
         return self
 
