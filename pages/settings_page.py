@@ -32,6 +32,7 @@ class SettingsPage:
         #     return self
 
     def click_dropdown_country(self):
+        time.sleep(10)
         browser.element(by.xpath('//*[@id="id_country"]')).click()
         return self
 
@@ -40,6 +41,7 @@ class SettingsPage:
         return self
 
     def change_website(self):
+        time.sleep(10)
         browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
         return self
 
