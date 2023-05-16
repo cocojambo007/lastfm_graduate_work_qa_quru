@@ -20,7 +20,7 @@ class SettingsPage:
 
     def change_display_name(self, name):
         # if browser.element(by.id('id_full_name')).should(be.blank):
-        browser.element(by.xpath('/html/body/div[5]/div[2]/div[6]/div[3]/div/div/section[2]/form/div[1]/div/input')).type(name)
+        browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
         return self
         # else:
         #     browser.element(by.id('id_full_name')).clear()
@@ -28,7 +28,7 @@ class SettingsPage:
         #     return self
 
     def click_dropdown_country(self):
-        browser.element(by.xpath('/html/body/div[5]/div[2]/div[6]/div[3]/div/div/section[2]/form/div[2]/div/select')).click()
+        browser.element(by.xpath('//*[@id="id_country"]')).click()
         return self
 
     def pick_country(self):
@@ -36,11 +36,11 @@ class SettingsPage:
         return self
 
     def change_website(self):
-        browser.element(by.xpath('/html/body/div[5]/div[2]/div[6]/div[3]/div/div/section[2]/form/div[3]/div/input')).type('https://qa.guru/')
+        browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
         return self
 
     def change_about_you(self):
-        browser.element(by.xpath('/html/body/div[5]/div[2]/div[6]/div[3]/div/div/section[2]/form/div[4]/div/textarea')).type('This diploma project')
+        browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
         return self
 
     def click_save_changes(self):
