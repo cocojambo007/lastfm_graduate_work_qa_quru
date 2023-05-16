@@ -36,7 +36,7 @@ def setup_browser(request):
         options=options)
 
     browser.config.driver = driver
-
+    driver.implicitly_wait(15)
     yield
     add_logs(browser)
     add_screenshot(browser)
