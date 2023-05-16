@@ -1,4 +1,6 @@
 import random, os
+import time
+
 from selene import browser, be, by
 
 song = random.randint(1, 10)
@@ -7,6 +9,7 @@ FILE = 'Screenshot_1.jpg'
 
 class SettingsPage:
     def upload_picture(self):
+        time.sleep(10)
         browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
         return self
 
@@ -20,6 +23,7 @@ class SettingsPage:
 
     def change_display_name(self, name):
         # if browser.element(by.id('id_full_name')).should(be.blank):
+        time.sleep(10)
         browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
         return self
         # else:
