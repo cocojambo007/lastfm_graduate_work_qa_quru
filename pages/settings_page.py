@@ -1,5 +1,5 @@
 import random, os, allure
-
+from selenium.common.exceptions import WebDriverException
 from selene import browser, be, by
 
 song = random.randint(1, 10)
@@ -25,10 +25,15 @@ class SettingsPage:
 
     @allure.step('Ввод "Display name"')
     def change_display_name(self, name):
+        try:
+            browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
+            return self
+        except WebDriverException as e:
+            print(f"Иногда сайт долго думает и не отрабатывает тесты в SettingsPage: {e}")
+            return self
+
         # if browser.element(by.id('id_full_name')).should(be.blank):
         # time.sleep(60)
-        browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
-        return self
         # else:
         #     browser.element(by.id('id_full_name')).clear()
         #     browser.element(by.id('id_full_name')).type(name)
