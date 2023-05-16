@@ -19,11 +19,16 @@ class SettingsPage:
         return self
 
     def change_display_name(self, name):
-        browser.element(by.id('id_full_name')).type(name)
+        # if browser.element(by.id('id_full_name')).should(be.blank):
+        browser.element(by.css('#id_full_name')).type(name)
         return self
+        # else:
+        #     browser.element(by.id('id_full_name')).clear()
+        #     browser.element(by.id('id_full_name')).type(name)
+        #     return self
 
     def click_dropdown_country(self):
-        browser.element(by.id('id_country')).click()
+        browser.element(by.css('#id_country')).click()
         return self
 
     def pick_country(self):
@@ -31,11 +36,11 @@ class SettingsPage:
         return self
 
     def change_website(self):
-        browser.element(by.id('id_homepage')).type('https://qa.guru/')
+        browser.element(by.css('#id_homepage')).type('https://qa.guru/')
         return self
 
     def change_about_you(self):
-        browser.element(by.id('id_about_me')).type('This diploma project')
+        browser.element(by.css('#id_about_me')).type('This diploma project')
         return self
 
     def click_save_changes(self):
