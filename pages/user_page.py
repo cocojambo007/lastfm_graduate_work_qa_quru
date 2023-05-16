@@ -28,7 +28,7 @@ class UserPage:
 
     def dislike_song_from_loved_track(self):
         browser.element(by.css(
-            f'#user-loved-tracks-section > table > tbody > tr:nth-child({song}) > td.chartlist-loved > div > form > button')).click()
+            f'#user-loved-tracks-section > table > tbody > tr:nth-child(1) > td.chartlist-loved > div > form > button')).click()
         return self
 
     def click_add_image(self):
