@@ -60,7 +60,8 @@ def test_dislike_song(setup_browser):
 @allure.step('Открыть главную страницу')
 def test_upload_picture_profile(setup_browser):
     login_page.full_way_login()
-    user_page.click_add_image()
+    footer_page.footer_settings()
+    # user_page.click_add_image()
     settings_page.upload_picture()
     settings_page.click_upload_picture_button()
     settings_page.click_delete_picture_button()
