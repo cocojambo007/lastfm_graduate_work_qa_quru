@@ -58,12 +58,22 @@ class SettingsPage:
     @allure.step('Ввод "Website"')
     def change_website(self):
         # time.sleep(10)
-        browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
+        try:
+            browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
+            # return self
+        except WebDriverException as e:
+            allure.attach(str(e), name="WebDriverException")
+            raise e
         return self
 
     @allure.step('Ввод "About you"')
     def change_about_you(self):
-        browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
+        try:
+            browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
+            # return self
+        except WebDriverException as e:
+            allure.attach(str(e), name="WebDriverException")
+            raise e
         return self
 
     @allure.step('Нажатие на кнопку "Save_changes"')
