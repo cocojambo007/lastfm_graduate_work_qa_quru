@@ -24,7 +24,7 @@ class SettingsPage:
 
     @allure.step('Ввод "Display name"')
     def change_display_name(self, name):
-        browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
+        browser.element(by.xpath('//*[@id="id_full_name"]')).clear().type(name)
         return self
 
     @allure.step('Раскрытие dropdown')
@@ -39,12 +39,12 @@ class SettingsPage:
 
     @allure.step('Ввод "Website"')
     def change_website(self):
-        browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
+        browser.element(by.xpath('//*[@id="id_homepage"]')).clear().type('https://qa.guru/')
         return self
 
     @allure.step('Ввод "About you"')
     def change_about_you(self):
-        browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
+        browser.element(by.xpath('//*[@id="id_about_me"]')).clear().type('This diploma project')
         return self
 
     @allure.step('Нажатие на кнопку "Save_changes"')
