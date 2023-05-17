@@ -1,12 +1,12 @@
 import time
+import allure
 
 from selene import browser, be, by
-import allure
 
 page_login = 'https://www.last.fm/login'
 
-class LoginPage:
 
+class LoginPage:
     @allure.step('Открытие страницы регистрации')
     def open_page(self, page):
         browser.open(page)
@@ -40,4 +40,4 @@ class LoginPage:
         LoginPage.press_button_login(self)
 
 
-login_page = LoginPage()
+

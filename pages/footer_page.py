@@ -1,4 +1,5 @@
-import random, allure
+import random
+import allure
 from selene import browser, by
 
 song = random.randint(1, 10)
@@ -13,4 +14,4 @@ class Footer_page:
         return self
 
 
-footer_page = Footer_page()
+

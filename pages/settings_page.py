@@ -1,6 +1,6 @@
 import random, os, allure
-from selenium.common.exceptions import WebDriverException
-from selene import browser, be, by
+
+from selene import browser, by
 
 song = random.randint(1, 10)
 FILE = 'Screenshot_1.jpg'
@@ -9,12 +9,7 @@ FILE = 'Screenshot_1.jpg'
 class SettingsPage:
     @allure.step('Загрузка картинки на аватар')
     def upload_picture(self):
-        # time.sleep(60)
-        try:
-            browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
-        except WebDriverException as e:
-            allure.attach(str(e), name="WebDriverException")
-            raise e
+        browser.element(by.id('id_avatar')).send_keys(os.getcwd() + f'/resources/{FILE}')
         return self
 
     @allure.step('Нажатие на кнопку "Upload picture"')
@@ -29,24 +24,11 @@ class SettingsPage:
 
     @allure.step('Ввод "Display name"')
     def change_display_name(self, name):
-        try:
-            browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
-            # return self
-        except WebDriverException as e:
-            allure.attach(str(e), name="WebDriverException")
-            raise e
+        browser.element(by.xpath('//*[@id="id_full_name"]')).type(name)
         return self
-
-        # if browser.element(by.id('id_full_name')).should(be.blank):
-        # time.sleep(60)
-        # else:
-        #     browser.element(by.id('id_full_name')).clear()
-        #     browser.element(by.id('id_full_name')).type(name)
-        #     return self
 
     @allure.step('Раскрытие dropdown')
     def click_dropdown_country(self):
-        # time.sleep(10)
         browser.element(by.xpath('//*[@id="id_country"]')).click()
         return self
 
@@ -57,23 +39,12 @@ class SettingsPage:
 
     @allure.step('Ввод "Website"')
     def change_website(self):
-        # time.sleep(10)
-        try:
-            browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
-            # return self
-        except WebDriverException as e:
-            allure.attach(str(e), name="WebDriverException")
-            raise e
+        browser.element(by.xpath('//*[@id="id_homepage"]')).type('https://qa.guru/')
         return self
 
     @allure.step('Ввод "About you"')
     def change_about_you(self):
-        try:
-            browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
-            # return self
-        except WebDriverException as e:
-            allure.attach(str(e), name="WebDriverException")
-            raise e
+        browser.element(by.xpath('//*[@id="id_about_me"]')).type('This diploma project')
         return self
 
     @allure.step('Нажатие на кнопку "Save_changes"')
@@ -83,4 +54,3 @@ class SettingsPage:
         return self
 
 
-settings_page = SettingsPage()

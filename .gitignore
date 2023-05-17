@@ -1,5 +1,5 @@
 /trash.py
-
+.env
 # JetBrains
 .idea/
 *.iml

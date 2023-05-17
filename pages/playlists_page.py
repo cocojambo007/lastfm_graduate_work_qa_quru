@@ -1,5 +1,6 @@
+import random
+import allure
 from selene import browser, by, be
-import random, allure
 
 song = random.randint(1, 10)
 
@@ -32,4 +33,4 @@ class PlaylistPage:
         return self
 
 
-playlist_page = PlaylistPage()
+

@@ -1,5 +1,6 @@
-from selene import browser, by
 import allure
+from selene import browser, by
+
 
 class SearchPage:
     @allure.step('Нажатие на иконку исполнителя')
@@ -8,4 +9,4 @@ class SearchPage:
         return self
 
 
-search_page = SearchPage()
+

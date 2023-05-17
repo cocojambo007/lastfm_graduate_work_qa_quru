@@ -1,9 +1,10 @@
 import random
-from selene import browser, be, by
 import allure
+from selene import browser, be, by
 
 song = random.randint(1, 10)
 FILE = 'Screenshot_1.jpg'
+
 
 class UserPage:
     @allure.step('Раскрытие поля поиска')
@@ -44,7 +45,6 @@ class UserPage:
 
 
 
-user_page = UserPage()
 
 # browser.element(by.class_name('masthead-search-toggle')).click()
 # browser.element(by.id('masthead-search-field')).should(be.blank).type('Electric Wizard')
