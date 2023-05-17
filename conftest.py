@@ -1,8 +1,10 @@
 import pytest
 import os
 from dotenv import load_dotenv
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
 from selene.support.shared import browser
 from help_allure import add_logs, add_screenshot, add_html, add_video
 
@@ -32,12 +34,15 @@ def setup_browser(request):
             "enableVideo": True
         }
     }
+    options.capabilities.update(selenoid_capabilities)
+
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
-    options.capabilities.update(selenoid_capabilities)
+
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
-        options=options)
+        options=options
+    )
 
     browser.config.driver = driver
     driver.implicitly_wait(120)
