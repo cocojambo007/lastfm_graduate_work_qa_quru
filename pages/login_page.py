@@ -1,3 +1,5 @@
+import time
+
 from selene import browser, be, by
 import allure
 
@@ -8,6 +10,7 @@ class LoginPage:
     @allure.step('Открытие страницы регистрации')
     def open_page(self, page):
         browser.open(page)
+        time.sleep(15)
 
     @allure.step('Ввод логина')
     def input_username_or_email(self, username):

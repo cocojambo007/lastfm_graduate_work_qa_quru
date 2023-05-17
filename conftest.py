@@ -5,9 +5,6 @@ from selene.support.shared import browser
 from help_allure import add_logs, add_screenshot, add_html, add_video
 
 
-DEFAULT_BROWSER_VERSION = "100.0"
-
-
 def pytest_addoption(parser):
     parser.addoption(
         '--browser_version',
@@ -19,7 +16,6 @@ def pytest_addoption(parser):
 def setup_browser(request):
     browser_name = request.config.getoption('--browser_version')
     options = Options()
-    # options.add_argument("--window-size=1920,1080")
 
     selenoid_capabilities = {
         "browserName": browser_name,
