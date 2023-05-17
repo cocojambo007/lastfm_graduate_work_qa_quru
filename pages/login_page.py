@@ -30,6 +30,7 @@ class LoginPage:
     @allure.step('Согласие на обработку куки')
     def click_accept_all(self):
         browser.element(by.css('#onetrust-accept-btn-handler')).click()
+        return self
 
     @allure.step('Авторизация')
     def authorization(self):
