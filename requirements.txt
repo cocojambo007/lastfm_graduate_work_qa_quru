@@ -4,3 +4,4 @@ allure-pytest
 python-dotenv==0.20.0
 voluptuous==0.13.1
 pytest-voluptuous==1.2.0
+curlify==2.2.1
