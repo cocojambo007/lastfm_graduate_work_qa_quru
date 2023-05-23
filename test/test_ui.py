@@ -2,17 +2,16 @@ import allure
 from allure_commons.types import Severity
 from pages import app
 
-band = 'Electric Wizard'
-page_login = 'https://www.last.fm/login'
+band = "Electric Wizard"
 
 
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature(f'Проверка регистрации пользователя')
-@allure.link(page_login, name='login')
+@allure.feature('UI')
+@allure.title(f'Проверка регистрации пользователя')
 def test_login(setup_browser):
-    app.login_page.open_page(page_login)
+    app.login_page.open_page()
     app.login_page.input_username_or_email('cocojambo_qa')
     app.login_page.input_password('1@qwerty')
     app.login_page.click_accept_all()
@@ -22,7 +21,8 @@ def test_login(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка поиска исполнителя')
+@allure.feature('UI')
+@allure.title('Проверка поиска исполнителя')
 def test_search_band(setup_browser):
     app.login_page.authorization()
     app.user_page.click_search_toggle()
@@ -34,7 +34,8 @@ def test_search_band(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка кнопки лайк')
+@allure.feature('UI')
+@allure.title('Проверка кнопки лайк')
 def test_like_song(setup_browser):
     app.login_page.authorization()
     app.user_page.click_search_toggle()
@@ -47,7 +48,8 @@ def test_like_song(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка добавления днового плейлиста')
+@allure.feature('UI')
+@allure.title('Проверка добавления днового плейлиста')
 def test_new_playlist(setup_browser):
     app.login_page.authorization()
     app.user_page.click_playlist()
@@ -61,7 +63,8 @@ def test_new_playlist(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка кнопки дизлайк')
+@allure.feature('UI')
+@allure.title('Проверка кнопки дизлайк')
 def test_dislike_song(setup_browser):
     app.login_page.authorization()
     app.user_page.click_loved_track()
@@ -71,7 +74,8 @@ def test_dislike_song(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка загрузки аватара')
+@allure.feature('UI')
+@allure.title('Проверка загрузки аватара')
 def test_upload_picture_profile(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()
@@ -84,7 +88,8 @@ def test_upload_picture_profile(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка смены имени профиля')
+@allure.feature('UI')
+@allure.title('Проверка смены имени профиля')
 def test_change_display_name(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()
@@ -95,7 +100,8 @@ def test_change_display_name(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка смены страны')
+@allure.feature('UI')
+@allure.title('Проверка смены страны')
 def test_change_country(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()
@@ -107,7 +113,8 @@ def test_change_country(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка смены website')
+@allure.feature('UI')
+@allure.title('Проверка смены website')
 def test_change_website(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()
@@ -118,7 +125,8 @@ def test_change_website(setup_browser):
 @allure.tag('ui')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
-@allure.feature('Проверка смены информации о себе')
+@allure.feature('UI')
+@allure.title('Проверка смены информации о себе')
 def test_change_about_you(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()

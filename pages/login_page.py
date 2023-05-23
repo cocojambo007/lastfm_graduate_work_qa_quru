@@ -1,15 +1,17 @@
+import os
 import time
 import allure
 
 from selene import browser, be, by
 
 page_login = 'https://www.last.fm/login'
-
+login = os.getenv('LOGIN_LASTFM')
+password = os.getenv('PASSWORD_LASTFM')
 
 class LoginPage:
     @allure.step('Открытие страницы регистрации')
-    def open_page(self, page):
-        browser.open(page)
+    def open_page(self):
+        browser.open(page_login)
         time.sleep(15)
 
     @allure.step('Ввод логина')
@@ -34,10 +36,10 @@ class LoginPage:
 
     @allure.step('Авторизация')
     def authorization(self):
-        LoginPage.open_page(self, page_login)
+        LoginPage.open_page(self)
         LoginPage.click_accept_all(self)
-        LoginPage.input_username_or_email(self, 'cocojambo_qa')
-        LoginPage.input_password(self, '1@qwerty')
+        LoginPage.input_username_or_email(self, login)
+        LoginPage.input_password(self, password)
         LoginPage.press_button_login(self)
 
 
