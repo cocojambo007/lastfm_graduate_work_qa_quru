@@ -83,6 +83,8 @@ allure serve .\allure-results
 
 <img src="resources/screenshots/chrome_GvuwgLTI2S.png" alt="Allure"/>
 
-Настроена отправка отчета в Telegram
+### <img width="6%" title="Telegram" src="resources/logo/tg.png"> Telegram
+
+#### Настроена отправка отчета в Telegram
 
 <img src="resources/screenshots/Telegram_RBaAzhVYNJ.png" alt="Telegram"/>
