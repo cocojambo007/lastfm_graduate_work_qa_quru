@@ -33,14 +33,14 @@
   <code><img width="5%" title="Selene" src="resources/logo/selene.png"></code>
   <code><img width="5%" title="Selenium" src="resources/logo/selenium.png"></code>
   <code><img width="5%" title="GitHub" src="resources/logo/Github.png"></code>
-  <code><img width="5%" title="Jenkins" src="resources/logo/jenkins.png"></code>
+  <code><img width="5%" title="Jenkins" src="resources/logo/Jenkins.png"></code>
   <code><img width="5%" title="selenoid" src="resources/logo/selenoid.png"></code>
   <code><img width="5%" title="Allure Report" src="resources/logo/allure.png"></code>
 <!--   <code><img width="5%" title="Jira" src="resources/logo/jira.png"></code> -->
   <code><img width="5%" title="Telegram" src="resources/logo/tg.png"></code>
 </p>
 
-## <img width="6%" title="Jenkins" src="resources/logo/jenkins.png"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/lastfm_graduate_work_qa_quru/)
+## <img width="6%" title="Jenkins" src="resources/logo/Jenkins.png"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/lastfm_graduate_work_qa_quru/)
 
 Для запуска тестов из Jenkins:
 1. Нажмите кнопку "Собрать с параметрами"
