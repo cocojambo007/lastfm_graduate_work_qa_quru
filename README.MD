@@ -25,19 +25,22 @@
   * ✅ Удаление информации о пользователе
 
 
-## :gear: Используемые технологии
-<p  align="center">
-  <code><img width="5%" title="Pycharm" src="images/logo/pycharm.png"></code>
-  <code><img width="5%" title="Python" src="images/logo/python.png"></code>
-  <code><img width="5%" title="Pytest" src="images/logo/pytest.png"></code>
-  <code><img width="5%" title="Selene" src="images/logo/selene.png"></code>
-  <code><img width="5%" title="Selenium" src="images/logo/selenium.png"></code>
-  <code><img width="5%" title="GitHub" src="images/logo/github.png"></code>
-  <code><img width="5%" title="Jenkins" src="images/logo/jenkins.png"></code>
-  <code><img width="5%" title="Docker" src="images/logo/docker.png"></code>
-  <code><img width="5%" title="Selenoid" src="images/logo/selenoid.png"></code>
-  <code><img width="5%" title="Allure Report" src="images/logo/allure_report.png"></code>
-  <code><img width="5%" title="Allure TestOps" src="images/logo/allure_testops.png"></code>
-<!--   <code><img width="5%" title="Jira" src="images/logo/jira.png"></code> -->
-  <code><img width="5%" title="Telegram" src="images/logo/tg.png"></code>
+## Технологический стек
+Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Allure TestOps, Jira, Github, Telegram
+
+<p  align="left">
+<code>
+  <img src="resources/python.png" width="40" height="40"  alt="Python"/>
+  <img src="resources/pytest.png" width="40" height="40"  alt="Pytest"/>
+  <img src="resources/selene.png" width="50" height="40"  alt="Selene"/>
+  <img src="resources/pysharm.png" width="40" height="40"  alt="PyCharm"/>
+  <img src="resources/request.png" width="50" height="40"  alt="Requests"/>
+  <img src="resources/appium.png" width="40" height="40"  alt="Appium"/>
+  <img src="resources/Jenkins.jpg" width="40" height="40"  alt="Jenkins"/>
+  <img src="resources/selenoid.png" width="40" height="40"  alt="Selenoid"/>
+  <img src="resources/allure.jpg" width="40" height="40"  alt="Allure TestOps"/>
+  <img src="resources/Jira.png" width="40" height="40"  alt="Jira"/>
+  <img src="resources/Github.png" width="40" height="40"  alt="Github"/>
+  <img src="resources/telegram-logo.png" width="40" height="40"  alt="Telegram"/>
+</code>
 </p>
