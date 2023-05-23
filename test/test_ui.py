@@ -49,7 +49,7 @@ def test_like_song(setup_browser):
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
 @allure.feature('UI')
-@allure.title('Проверка добавления днового плейлиста')
+@allure.title('Проверка добавления нового плейлиста')
 def test_new_playlist(setup_browser):
     app.login_page.authorization()
     app.user_page.click_playlist()
@@ -64,7 +64,7 @@ def test_new_playlist(setup_browser):
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
 @allure.feature('UI')
-@allure.title('Проверка кнопки дизлайк')
+@allure.title('Проверка дизлайка')
 def test_dislike_song(setup_browser):
     app.login_page.authorization()
     app.user_page.click_loved_track()
