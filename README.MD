@@ -66,13 +66,6 @@ pip install -r requirements.txt
 pytest . --alluredir=allure-results
 ```
 
-## Отчеты о прохождении тестов доступны в Allure
-
-> При локальном запуске введите в командной строке: 
-```bash
-allure serve .\allure-results
-```
-
 ### <img width="6%" title="Allure" src="resources/logo/allure.png"> Allure
 
 #### Примеры отображения тестов
