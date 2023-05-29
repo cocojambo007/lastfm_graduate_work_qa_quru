@@ -1,7 +1,6 @@
-# Автотесты для сайтов
+# Автотесты для сайта
 
-* UI - https://www.last.fm/
-* API - https://reqres.in/api/
+* https://www.last.fm/
 
 ## Покрыт следующий функционал
 * UI тесты
@@ -16,13 +15,6 @@
     * ✅ Проверка смены website
     * ✅ Проверка смены информации о себе
 
-
-* API тесты
-  * ✅ Регистрация нового пользователя
-  * ✅ Получение информации об одном пользователе
-  * ✅ Получение информации о нескольких пользователях
-  * ✅ Обновление информации о пользователе
-  * ✅ Удаление информации о пользователе
 
 
 ## Технологический стек
@@ -40,16 +32,13 @@
   <code><img width="5%" title="Telegram" src="resources/logo/tg.png"></code>
 </p>
 
-## <img width="6%" title="Jenkins" src="resources/logo/Jenkins.png"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/lastfm_graduate_work_qa_quru/)
+## <img width="6%" title="Jenkins" src="resources/logo/Jenkins.png"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/lastfm_graduate_work_qa_quru_ui/)
 
 Для запуска тестов из Jenkins:
-1. Нажмите кнопку "Собрать с параметрами"
+1. Нажмите кнопку "Собрать сейчас"
 
-<p><img src="resources/screenshots/chrome_Th3Y7ERHtN.png" alt="Jenkins"/></p>
+<p><img src="resources/screenshots/chrome_CGQDVLALYz.png" alt="Jenkins"/></p>
 
-2. Выберите параметр ui или api
-
-<p><img src="resources/screenshots/chrome_dTHa0jnbT2.png" alt="Jenkins"/></p>
 
 ## Запуск тестов
 ### Локально
@@ -66,18 +55,24 @@ pip install -r requirements.txt
 pytest . --alluredir=allure-results
 ```
 
-### <img width="6%" title="Allure" src="resources/logo/allure.png"> Allure
+### <img width="6%" title="Allure" src="resources/logo/allure.png"> [Allure](https://jenkins.autotests.cloud/job/lastfm_graduate_work_qa_quru_ui/100/allure/)
 
 #### Примеры отображения тестов
 
-<img src="resources/screenshots/chrome_48S1YicMlI.png" alt="Allure"/>
+<img src="resources/screenshots/chrome_9RvLVsxQSl.png" alt="Allure"/>
 
-<img src="resources/screenshots/chrome_3oyurhepqi.png" alt="Allure"/>
-
-<img src="resources/screenshots/chrome_GvuwgLTI2S.png" alt="Allure"/>
+<img src="resources/screenshots/chrome_0lE20ldNTa.png" alt="Allure"/>
 
 ### <img width="6%" title="Telegram" src="resources/logo/tg.png"> Telegram
 
 #### Настроена отправка отчета в Telegram
 
-<img src="resources/screenshots/Telegram_RBaAzhVYNJ.png" alt="Telegram"/>
+<img src="resources/screenshots/Telegram_fUgxlSJIX4.png" alt="Telegram"/>
+
+## Пример видео тестового прогона
+
+В отчетах Allure для каждого UI-теста прикреплен не только скриншот, но и видео прохождения теста
+
+<p align="center">
+  <video title="Video" src="resources/video/2a77907a7d05d490ef38790234474482.mp4">
+</p>
