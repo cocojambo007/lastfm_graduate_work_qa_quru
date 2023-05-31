@@ -18,6 +18,3 @@ class ArtistPage:
         time.sleep(3)
         browser.element(by.css(css_like_song)).click()
         assert browser.element(by.css(css_like_song)).should(have.text('Love this track'))
-
-    # browser.element(by.css(css_like_song)).click()
-    # assert browser.element(by.css(css_like_song)).should(have.text('Love this track'))
