@@ -1,32 +1,36 @@
 import os
-import time
 import allure
 
-from selene import browser, be, by
+from selene import browser, be, by, have
 
-page_login = 'https://www.last.fm/login'
+page_login = os.getenv('SITE')
 login = os.getenv('LOGIN_LASTFM')
 password = os.getenv('PASSWORD_LASTFM')
+
 
 class LoginPage:
     @allure.step('Открытие страницы регистрации')
     def open_page(self):
         browser.open(page_login)
-        time.sleep(15)
+        assert 'Login | Last.fm' in browser.title()
 
     @allure.step('Ввод логина')
     def input_username_or_email(self, username):
         browser.element(by.id('id_username_or_email')).should(be.blank).type(username)
+        assert browser.element(by.id('id_username_or_email')).should(have.value(username))
         return self
 
     @allure.step('Ввод пароля')
     def input_password(self, password):
         browser.element(by.id('id_password')).should(be.blank).type(password)
+        assert browser.element(by.id('id_password')).should(have.value(password))
         return self
 
     @allure.step('Нажатие кнопки "Let me in!"')
     def press_button_login(self):
         browser.element(by.text('Let me in!')).click()
+        # time.sleep(5)
+        assert f'{login}’s Music Profile | Last.fm' in browser.title()
         return self
 
     @allure.step('Согласие на обработку куки')
@@ -36,11 +40,11 @@ class LoginPage:
 
     @allure.step('Авторизация')
     def authorization(self):
-        LoginPage.open_page(self)
-        LoginPage.click_accept_all(self)
-        LoginPage.input_username_or_email(self, login)
-        LoginPage.input_password(self, password)
-        LoginPage.press_button_login(self)
+        self.open_page()
+        self.input_username_or_email(login)
+        self.input_password(password)
+        self.click_accept_all()
+        self.press_button_login()
 
 
 
