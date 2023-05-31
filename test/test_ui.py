@@ -3,6 +3,7 @@ from allure_commons.types import Severity
 from pages import app
 import os
 
+
 band = "Electric Wizard"
 login = os.getenv('LOGIN_LASTFM')
 password = os.getenv('PASSWORD_LASTFM')
