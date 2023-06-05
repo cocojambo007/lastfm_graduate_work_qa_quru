@@ -3,15 +3,15 @@ import allure
 
 from selene import browser, be, by, have
 
-page_login = os.getenv('SITE')
+page = os.getenv('SITE')
 login = os.getenv('LOGIN_LASTFM')
 password = os.getenv('PASSWORD_LASTFM')
 
 
 class LoginPage:
     @allure.step('Открытие страницы регистрации')
-    def open_page(self):
-        browser.open(page_login)
+    def open_login_page(self):
+        browser.open(page + 'login')
         assert 'Login | Last.fm' in browser.title()
 
     @allure.step('Ввод логина')
@@ -40,7 +40,7 @@ class LoginPage:
 
     @allure.step('Авторизация')
     def authorization(self):
-        self.open_page()
+        self.open_login_page()
         self.input_username_or_email(login)
         self.input_password(password)
         self.click_accept_all()

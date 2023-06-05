@@ -15,7 +15,7 @@ password = os.getenv('PASSWORD_LASTFM')
 @allure.feature('UI')
 @allure.title(f'Проверка регистрации пользователя')
 def test_login(setup_browser):
-    app.login_page.open_page()
+    app.login_page.open_login_page()
     app.login_page.input_username_or_email(login)
     app.login_page.input_password(password)
     app.login_page.click_accept_all()
@@ -28,7 +28,9 @@ def test_login(setup_browser):
 @allure.feature('UI')
 @allure.title('Проверка поиска исполнителя')
 def test_search_band(setup_browser):
+
     app.login_page.authorization()
+
     app.user_page.click_search_toggle()
     app.user_page.artist_input(band)
     app.user_page.click_search_submit(band)
@@ -94,45 +96,49 @@ def test_upload_picture_profile(setup_browser):
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
 @allure.feature('UI')
-@allure.title('Проверка смены имени профиля')
+@allure.title('Проверка страницы settings')
 def test_change_display_name(setup_browser):
     app.login_page.authorization()
     app.footer_page.footer_settings()
     app.settings_page.change_display_name('Pavel Fomin')
-    app.settings_page.click_save_changes()
-
-
-@allure.tag('ui')
-@allure.severity(Severity.NORMAL)
-@allure.label('owner', 'fominpa')
-@allure.feature('UI')
-@allure.title('Проверка смены страны')
-def test_change_country(setup_browser):
-    app.login_page.authorization()
-    app.footer_page.footer_settings()
     app.settings_page.click_dropdown_country()
     app.settings_page.pick_country()
-
-
-@allure.tag('ui')
-@allure.severity(Severity.NORMAL)
-@allure.label('owner', 'fominpa')
-@allure.feature('UI')
-@allure.title('Проверка смены website')
-def test_change_website(setup_browser):
-    app.login_page.authorization()
-    app.footer_page.footer_settings()
     app.settings_page.change_website()
-    app.settings_page.click_save_changes()
-
-
-@allure.tag('ui')
-@allure.severity(Severity.NORMAL)
-@allure.label('owner', 'fominpa')
-@allure.feature('UI')
-@allure.title('Проверка смены информации о себе')
-def test_change_about_you(setup_browser):
-    app.login_page.authorization()
-    app.footer_page.footer_settings()
     app.settings_page.change_about_you()
     app.settings_page.click_save_changes()
+
+
+# @allure.tag('ui')
+# @allure.severity(Severity.NORMAL)
+# @allure.label('owner', 'fominpa')
+# @allure.feature('UI')
+# @allure.title('Проверка смены страны')
+# def test_change_country(setup_browser):
+#     app.login_page.authorization()
+#     app.footer_page.footer_settings()
+#     app.settings_page.click_dropdown_country()
+#     app.settings_page.pick_country()
+#
+#
+# @allure.tag('ui')
+# @allure.severity(Severity.NORMAL)
+# @allure.label('owner', 'fominpa')
+# @allure.feature('UI')
+# @allure.title('Проверка смены website')
+# def test_change_website(setup_browser):
+#     app.login_page.authorization()
+#     app.footer_page.footer_settings()
+#     app.settings_page.change_website()
+#     app.settings_page.click_save_changes()
+#
+#
+# @allure.tag('ui')
+# @allure.severity(Severity.NORMAL)
+# @allure.label('owner', 'fominpa')
+# @allure.feature('UI')
+# @allure.title('Проверка смены информации о себе')
+# def test_change_about_you(setup_browser):
+#     app.login_page.authorization()
+#     app.footer_page.footer_settings()
+#     app.settings_page.change_about_you()
+#     app.settings_page.click_save_changes()
