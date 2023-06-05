@@ -3,7 +3,6 @@ from allure_commons.types import Severity
 from pages import app
 import os
 
-
 band = "Electric Wizard"
 login = os.getenv('LOGIN_LASTFM')
 password = os.getenv('PASSWORD_LASTFM')
@@ -42,27 +41,14 @@ def test_search_band(setup_browser):
 @allure.title('Проверка лайка и дизлайка')
 def test_like_unlike_song(setup_browser):
     app.login_page.authorization()
-
     app.user_page.click_loved_track()
     app.user_page.dislike_song_from_loved_track()
-
     app.user_page.click_search_toggle()
     app.user_page.artist_input(band)
     app.user_page.click_search_submit(band)
     app.search_page.click_found_artist(band)
     app.artist_page.like_song()
     app.artist_page.unlike_song()
-
-
-# @allure.tag('ui')
-# @allure.severity(Severity.NORMAL)
-# @allure.label('owner', 'fominpa')
-# @allure.feature('UI')
-# @allure.title('Проверка дизлайка')
-# def test_dislike_song(setup_browser):
-#     app.login_page.authorization()
-#     app.user_page.click_loved_track()
-#     app.user_page.dislike_song_from_loved_track()
 
 
 @allure.tag('ui')
@@ -109,6 +95,15 @@ def test_change_display_name(setup_browser):
     app.settings_page.change_about_you()
     app.settings_page.click_save_changes()
 
+# @allure.tag('ui')
+# @allure.severity(Severity.NORMAL)
+# @allure.label('owner', 'fominpa')
+# @allure.feature('UI')
+# @allure.title('Проверка дизлайка')
+# def test_dislike_song(setup_browser):
+#     app.login_page.authorization()
+#     app.user_page.click_loved_track()
+#     app.user_page.dislike_song_from_loved_track()
 
 # @allure.tag('ui')
 # @allure.severity(Severity.NORMAL)
