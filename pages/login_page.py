@@ -46,5 +46,8 @@ class LoginPage:
         self.click_accept_all()
         self.press_button_login()
 
-
-
+    @allure.step('Открытие главной страницы')
+    def open_main_page(self):
+        browser.open(page)
+        self.click_accept_all()
+        assert 'Last.fm | Play music, find songs, and discover artists' in browser.title()

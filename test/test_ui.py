@@ -28,9 +28,7 @@ def test_login(setup_browser):
 @allure.feature('UI')
 @allure.title('Проверка поиска исполнителя')
 def test_search_band(setup_browser):
-
-    app.login_page.authorization()
-
+    app.login_page.open_main_page()
     app.user_page.click_search_toggle()
     app.user_page.artist_input(band)
     app.user_page.click_search_submit(band)
@@ -41,9 +39,13 @@ def test_search_band(setup_browser):
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'fominpa')
 @allure.feature('UI')
-@allure.title('Проверка кнопки лайк')
+@allure.title('Проверка лайка и дизлайка')
 def test_like_unlike_song(setup_browser):
     app.login_page.authorization()
+
+    app.user_page.click_loved_track()
+    app.user_page.dislike_song_from_loved_track()
+
     app.user_page.click_search_toggle()
     app.user_page.artist_input(band)
     app.user_page.click_search_submit(band)
@@ -52,15 +54,15 @@ def test_like_unlike_song(setup_browser):
     app.artist_page.unlike_song()
 
 
-@allure.tag('ui')
-@allure.severity(Severity.NORMAL)
-@allure.label('owner', 'fominpa')
-@allure.feature('UI')
-@allure.title('Проверка дизлайка')
-def test_dislike_song(setup_browser):
-    app.login_page.authorization()
-    app.user_page.click_loved_track()
-    app.user_page.dislike_song_from_loved_track()
+# @allure.tag('ui')
+# @allure.severity(Severity.NORMAL)
+# @allure.label('owner', 'fominpa')
+# @allure.feature('UI')
+# @allure.title('Проверка дизлайка')
+# def test_dislike_song(setup_browser):
+#     app.login_page.authorization()
+#     app.user_page.click_loved_track()
+#     app.user_page.dislike_song_from_loved_track()
 
 
 @allure.tag('ui')
