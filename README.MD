@@ -4,16 +4,16 @@
 
 ## Покрыт следующий функционал
 * UI тесты
-    * ✅ Проверка регистрации пользователя
+    * ✅ Проверка входа пользователя
     * ✅ Проверка поиска исполнителя
     * ✅ Проверка кнопки лайк и дизлайк
     * ✅ Проверка добавления нового плейлиста
-    * ✅ Проверка дизлайка
     * ✅ Проверка загрузки аватара
-    * ✅ Проверка смены имени профиля
-    * ✅ Проверка смены страны
-    * ✅ Проверка смены website
-    * ✅ Проверка смены информации о себе
+    * ✅ Проверка страницы settings
+      * ✅ Проверка смены имени профиля
+      * ✅ Проверка смены страны
+      * ✅ Проверка смены website
+      * ✅ Проверка смены информации о себе
 
 
 
@@ -59,15 +59,15 @@ pytest . --alluredir=allure-results
 
 #### Примеры отображения тестов
 
-<img src="resources/screenshots/chrome_9RvLVsxQSl.png" alt="Allure"/>
+<img src="resources/screenshots/chrome_TLhUJ6pyoC.png" alt="Allure"/>
 
-<img src="resources/screenshots/chrome_0lE20ldNTa.png" alt="Allure"/>
+<img src="resources/screenshots/chrome_8exlyfTogV.png" alt="Allure"/>
 
 ### <img width="6%" title="Telegram" src="resources/logo/tg.png"> Telegram
 
 #### Настроена отправка отчета в Telegram
 
-<img src="resources/screenshots/Telegram_fUgxlSJIX4.png" alt="Telegram"/>
+<img src="resources/screenshots/Telegram_W88WWBlIPN.png" alt="Telegram"/>
 
 ## Пример видео тестового прогона
 
